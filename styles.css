@@ -1,0 +1,315 @@
+:root {
+  --blue-keeptroop: #1a00e3;
+  --blue-keeptroop-hover: #1200a1;
+  --blue-keeptroop-light: rgba(26, 0, 227, 0.15);
+  --background-dark: #121214;
+  --background-light: #202024;
+  --text-light: #e1e1e6;
+  --text-muted: #a8a8b3;
+  --var-input-bg: #121214;
+  --border-color: #323238;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background-dark);
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--text-light);
+  min-height: 100vh;
+  padding: 40px 20px;
+  display: flex;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.main-section {
+  background-color: var(--background-light);
+  border-radius: 20px;
+  padding: 40px 30px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  border: 1px solid var(--border-color);
+}
+
+.logo-container {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.keeptroop-logo {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  border: 3px solid var(--border-color);
+  transition: transform 0.3s ease;
+}
+
+.keeptroop-logo:hover {
+  transform: scale(1.05);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: var(--text-light);
+  letter-spacing: -0.5px;
+}
+
+h2, h3 {
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-light);
+}
+
+.config-section {
+  margin-bottom: 32px;
+  background-color: rgba(0,0,0,0.15);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--border-color);
+}
+
+.input-group {
+  display: flex;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.input-field {
+  flex: 1;
+  min-width: 200px;
+}
+
+label {
+  display: block;
+  margin-bottom: 8px;
+  font-weight: 500;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+}
+
+input[type="number"],
+input[type="text"],
+textarea {
+  width: 100%;
+  padding: 14px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  background-color: var(--var-input-bg);
+  color: var(--text-light);
+  font-size: 16px;
+  transition: all 0.2s ease;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--blue-keeptroop);
+  box-shadow: 0 0 0 3px var(--blue-keeptroop-light);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+  font-family: inherit;
+}
+
+.btn {
+  background-color: var(--blue-keeptroop);
+  color: var(--text-light);
+  border: none;
+  padding: 14px 24px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  margin: 5px 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn:hover {
+  background-color: var(--blue-keeptroop-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px var(--blue-keeptroop-light);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-light);
+}
+
+.btn-secondary:hover {
+  background-color: var(--border-color);
+  box-shadow: none;
+}
+
+.players-section {
+  margin-bottom: 30px;
+}
+
+.add-player-container {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.add-player-container input {
+  flex: 1;
+  min-width: 200px;
+}
+
+.add-player-container .btn {
+  margin: 0;
+}
+
+.players-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 24px 0px;
+}
+
+.player-tag {
+  background-color: var(--blue-keeptroop-light);
+  color: var(--text-light);
+  padding: 8px 16px;
+  border-radius: 24px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  border: 1px solid var(--blue-keeptroop);
+  font-weight: 500;
+}
+
+.remove-player {
+  background: none;
+  border: none;
+  color: var(--text-light);
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  padding: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.2s;
+}
+
+.remove-player:hover {
+  background-color: #ff4d4f;
+}
+
+.bulk-input {
+  display: none;
+}
+
+.bulk-input.active {
+  display: block;
+  animation: fadeIn 0.3s ease;
+}
+
+.single-input {
+  display: block;
+}
+
+.single-input.hidden {
+  display: none;
+}
+
+.teams-result {
+  margin-top: 40px;
+  padding-top: 30px;
+  border-top: 1px solid var(--border-color);
+  animation: fadeIn 0.5s ease;
+}
+
+.teams-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.team-card {
+  background-color: var(--var-input-bg);
+  border-radius: 16px;
+  padding: 24px;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.team-card:hover {
+  border-color: var(--blue-keeptroop);
+}
+
+.team-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  text-align: center;
+  color: var(--text-light);
+  padding-bottom: 12px;
+  border-bottom: 1px dashed var(--border-color);
+}
+
+.team-members {
+  list-style: none;
+}
+
+.team-members li {
+  padding: 10px 0;
+  font-size: 15px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.team-members li:before {
+  content: '•';
+  color: var(--blue-keeptroop);
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 24px;
+}
+
+.hidden {
+  display: none;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

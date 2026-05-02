@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sorteador de Times</title>
+    <link rel="shortcut icon" href="./img/logoKeepTroop.jpeg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="main-section">
+            <div class="logo-container">
+                <img class="keeptroop-logo" src="./img/logoKeepTroop.jpeg" alt="Logo do Time">
+            </div>
+            
+            <h1>Sorteador de Times</h1>
+            
+            <div class="config-section">
+                <div class="input-group">
+                    <div class="input-field">
+                        <label for="numPlayers">Quantidade de Jogadores:</label>
+                        <input type="number" id="numPlayers" min="1" value="12">
+                    </div>
+                    <div class="input-field">
+                        <label for="numTeams">Quantidade de Times:</label>
+                        <input type="number" id="numTeams" min="1" value="3">
+                    </div>
+                </div>
+            </div>
+
+            <div class="players-section">
+                <h3>Adicionar Jogadores:</h3>
+                
+                <div class="single-input" id="singleInput">
+                    <div class="add-player-container">
+                        <input type="text" id="playerName" placeholder="Nome do jogador">
+                        <button class="btn" onclick="addPlayer()">Adicionar</button>
+                    </div>
+                </div>
+
+                <div class="bulk-input" id="bulkInput">
+                    <div class="input-field">
+                        <label for="bulkPlayers"> </label>
+                        <textarea id="bulkPlayers" placeholder="Cole a lista com os jogadores da linha aqui"></textarea>
+                    </div>
+                    <button class="btn" onclick="processBulkInput()">Processar Lista</button>
+                </div>
+
+                <div class="button-container">
+                    <button class="btn btn-secondary" id="toggleInputBtn" onclick="toggleInputMode()">Usar a lista do racha</button>
+                </div>
+
+                <div class="players-list" id="playersList"></div>
+            </div>
+
+            <div class="button-container">
+                <button class="btn hidden" id="sortBtn" onclick="sortTeams()">Sortear Times</button>
+                <button class="btn hidden" id="resortBtn" onclick="sortTeams()">Sortear Novamente</button>
+            </div>
+
+            <div class="teams-result hidden" id="teamsResult">
+                <h2>Resultado do Sorteio:</h2>
+                <div class="teams-grid" id="teamsGrid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
